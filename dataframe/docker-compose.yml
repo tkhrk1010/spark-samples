@@ -1,0 +1,12 @@
+version: '3.9'
+services:
+  pyspark:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./word_count_dataframe.py:/app/word_count_dataframe.py
+      - ./input.csv:/app/input.csv
+    stdin_open: true
+    tty: true
+    command: python word_count_dataframe.py
