@@ -13,6 +13,9 @@ log4j.LogManager.getRootLogger().setLevel(log4j.Level.WARN)
 log4j.LogManager.getRootLogger().addAppender(log4j.ConsoleAppender(log4j.PatternLayout("%p %t %m%n"), "System.out"))
 
 # Read the CSV file into a DataFrame
+# データフレームは、スキーマを持つ行と列のデータ構造で、RDDよりも高度な抽象化を提供する。
+# csvを読み込むときに、行ごとに自動的にパーティションに分割される。
+# パーティションのサイズは、Sparkの設定（spark.sql.files.maxPartitionBytes）や、ファイルのサイズと場所に基づいて決定される。
 df = spark.read.csv("input.csv", header=True, inferSchema=True)
 
 # Show the schema of the DataFrame
