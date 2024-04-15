@@ -1,0 +1,11 @@
+version: '3.9'
+services:
+  pyspark:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./word_count.py:/app/word_count.py
+      - ./input.txt:/app/input.txt
+    stdin_open: true
+    tty: true
