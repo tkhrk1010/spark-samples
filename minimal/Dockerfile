@@ -25,5 +25,3 @@ ENV PATH=$PATH:$SPARK_HOME/bin
 
 # Set the working directory
 WORKDIR /app
-
-CMD ["python", "word_count.py"]

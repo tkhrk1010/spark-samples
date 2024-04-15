@@ -9,3 +9,4 @@ services:
       - ./input.txt:/app/input.txt
     stdin_open: true
     tty: true
+    command: python word_count.py
